@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <h1>Trip Planner Lite</h1>
+    <!-- weather data pulled from firt page goes here -->
+    <div>
+        <form>
+            <button></button>
+            <input class="search-input uk-input" id="form-stacked-text"  type="text" placeholder="City...">
+        </form>
+    </div>
+    <!-- buttons for hotels, restaurants, tourist sites -->
+    <div>
+        <button><a href="#hotel">Hotels</a></button>
+        <button><a href="#rest">Restaurants</a></button>
+        <button><a href="#sites">Tourist Sites</a></button>
+    </div>
+    <div>
+        <!-- this is where the webcam goes -->
+        <section class="webcam-container">
+            <div>
+                <span id="webcam1"></span>
+            </div>
+            <div>
+                <span id="webcam2"></span>
+            </div>
+            <div>
+                <span id="webcam3"></span>
+            </div>
+        </section>
+        <section></section>
+    </div>
+    <div>
+        <!-- Hotels -->
+        <section id="hotel"></section>
+        <!-- restaurants -->
+        <section id="rest"></section>
+        <!-- tourist sites -->
+        <section id="sites"></section>
+    </div>
+    <div>
+    <!-- Home button -->
+    <button><a href="index.html">Home</a></button>
+    </div>
+</body>
+
+</html>
