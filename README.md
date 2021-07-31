@@ -1,3 +1,3 @@
 # group-project-1
 
-Hi this is Steven. We're trying to see if this push enables the code editor thing in github.
+I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming. "My".....
