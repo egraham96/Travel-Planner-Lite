@@ -52,7 +52,7 @@ function currentCityWeather(){
             //calling the Weather, Hotel, attractions, and restaurant functions to get list of respective category for city we are searching for.
             // setTimeout Functions are so we can bypass the 429 Error.
             Weather(latLonWeatherURL);
-            attractionsAdvisor(latitude, longitude);
+            hotelAdvisor(latitude, longitude);
             // setTimeout(function(){
             //     hotelAdvisor(latitude, longitude);
             //     setTimeout(() => {
@@ -74,7 +74,7 @@ function hotelAdvisor(latitude, longitude){
     fetch("https://travel-advisor.p.rapidapi.com/hotels/list-by-latlng?latitude=" + latitude + "&longitude=" + longitude + "&lang=en_US&hotel_class=3&limit=25&adults=2&amenities=bar_lounge&rooms=1&currency=USD&subcategory=hotel%2Cbb&nights=5", {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-key": "5c51261411msh7f87afb8f8d99f1p14de4cjsn0abca2259546",
+		"x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
 		"x-rapidapi-host": "travel-advisor.p.rapidapi.com"
 	}
     })
@@ -91,12 +91,13 @@ function hotelAdvisor(latitude, longitude){
             hotelNameArray.push(hotelName);
         }    
         console.log(hotelLocationID);
+        console.log(hotelNameArray);
+        //for loop function to get the images and names and add them to the html.
         hotelPhotos(hotelLocationID, hotelNameArray);
     })
     .catch(err => {
         console.error(err);
     });
-
 }
 
 //function for list of attractions in CITY
@@ -104,7 +105,7 @@ function attractionsAdvisor(latitude, longitude){
     fetch("https://travel-advisor.p.rapidapi.com/attractions/list-by-latlng?longitude=" + longitude + " &latitude=" + latitude + " &lunit=mi&currency=USD&limit=25&lang=en_US", {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-key": "5c51261411msh7f87afb8f8d99f1p14de4cjsn0abca2259546",
+		"x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
 		"x-rapidapi-host": "travel-advisor.p.rapidapi.com"
 	}
     })
@@ -128,7 +129,7 @@ function attractionsAdvisor(latitude, longitude){
             } 
             console.log(attractionLocationID);
             console.log(attractionNameArray);
-            //For Loop to Call images and then add them onto the html.
+            //for loop function to get the images and names and add them to the html.
             attractionPhotos(attractionLocationID, attractionNameArray);
     })
     .catch(err => {
@@ -141,7 +142,7 @@ function restaurantsAdvisor(latitude, longitude){
     fetch("https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=" + latitude + "&longitude=" + longitude + "&limit=25&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US&min_rating=4", {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-key": "5c51261411msh7f87afb8f8d99f1p14de4cjsn0abca2259546",
+		"x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
 		"x-rapidapi-host": "travel-advisor.p.rapidapi.com"
 	}
     })
@@ -158,7 +159,8 @@ function restaurantsAdvisor(latitude, longitude){
                 restaurantNameArray.push(restaurantName);
             }
             console.log(restaurantLocationID);
-            //For Loop to Call images and then add them onto the html.
+            console.log(restaurantNameArray);
+            //for loop function to get the images and names and add them to the html.
             restaurantPhotos(restaurantLocationID, restaurantNameArray);
     })
     .catch(err => {
@@ -175,6 +177,12 @@ const sleep = (milliseconds) => {
 //function to run asynchrnously to avoid the max api rate call
 async function hotelPhotos(array, array2){
     for(j=0; j<10; j++){
+
+        //grabbing the respective names and putting it into the html
+        var imageName = document.createElement('h3');
+        imageName.innerHTML = array2[j];
+        hotelNames.append(imageName);
+
         await sleep(750)
         fetch("https://travel-advisor.p.rapidapi.com/photos/list?location_id=" + array[j] + "&currency=USD&limit=2&lang=en_US", {
         "method": "GET",
@@ -191,16 +199,13 @@ async function hotelPhotos(array, array2){
                 var imageTags = document.createElement('img');
                 
                 //adding this, so if location_ids dont have corresponding images, we use a stock photo.
-                if (data.data.length === 0){
-                    imageTags.setAttribute('src', 'https://media-cdn.tripadvisor.com/media/photo-l/1d/42/ca/1f/circus-circus-hotel-casino.jpg');
-                    imageName.innerHTML = array2[j];
+                if (data.data.length !== 0){
+                    imageTags.setAttribute('src', data.data[0].images.small.url);
                 }else{
-                    imageTags.setAttribute('src', data.data[0].images.small.url); 
-                    imageName.innerHTML = array2[j];
+                    imageTags.setAttribute('src', 'https://media-cdn.tripadvisor.com/media/photo-l/1d/42/ca/1f/circus-circus-hotel-casino.jpg'); 
                 }
 
                 //appending the images and their respective names onto the html page.
-                hotelNames.append(imageName);
                 hotelImages.append(imageTags);
         })
         .catch(err => {
@@ -211,43 +216,11 @@ async function hotelPhotos(array, array2){
 //function to run asynchrnously to avoid the max api rate call
 async function restaurantPhotos(array, array2){
     for(j=0; j<10; j++){
-        await sleep(750)
-        fetch("https://travel-advisor.p.rapidapi.com/photos/list?location_id=" + array[j] + "&currency=USD&limit=2&lang=en_US", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": "5c51261411msh7f87afb8f8d99f1p14de4cjsn0abca2259546",
-            "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
-        }
-        })
-        .then(response => response.json())
-        .then((data) => {
-                console.log(data);
-                //creating the h3 and img tags to add to the appropriate sections.
-                var imageName = document.createElement('h3');
-                var imageTags = document.createElement('img');
+        //grabbing the respective names and putting it into the html
+        var imageName = document.createElement('h3');
+        imageName.innerHTML = array2[j];
+        restNames.append(imageName);
 
-                //adding this, so if location_ids dont have corresponding images, we use a stock photo.
-                if (data.data.length === 0){
-                    imageTags.setAttribute('src', 'https://media-cdn.tripadvisor.com/media/photo-l/02/25/f3/67/relax-by-the-pool.jpg');
-                    imageTags.set
-                    imageName.innerHTML = array2[j];
-                }else{
-                    imageTags.setAttribute('src', data.data[0].images.small.url);
-                    imageName.innerHTML = array2[j];
-                }
-                //appending the images and their respective names onto the html page.
-                restNames.append(imageName);
-                restImages.append(imageTags);
-
-        })
-        .catch(err => {
-        console.error(err);
-        });
-    }
-}
-//function to run asynchrnously to avoid the max api rate call
-async function attractionPhotos(array, array2){
-    for(j=0; j<10; j++){
         await sleep(750)
         fetch("https://travel-advisor.p.rapidapi.com/photos/list?location_id=" + array[j] + "&currency=USD&limit=2&lang=en_US", {
         "method": "GET",
@@ -266,13 +239,47 @@ async function attractionPhotos(array, array2){
                 //adding this, so if location_ids dont have corresponding images, we use a stock photo.
                 if (data.data.length !== 0){
                     imageTags.setAttribute('src', data.data[0].images.small.url);
-                    imageName.innerHTML = array2[j];
                 }else{
-                    imageTags.setAttribute('src', 'https://media-cdn.tripadvisor.com/media/photo-l/00/14/61/e5/welcome.jpg'); 
-                    imageName.innerHTML = array2[j];
+                    imageTags.setAttribute('src','https://media-cdn.tripadvisor.com/media/photo-l/02/25/f3/67/relax-by-the-pool.jpg');
                 }
                 //appending the images and their respective names onto the html page.
-                siteNames.append(imageName);
+                restImages.append(imageTags);
+
+        })
+        .catch(err => {
+        console.error(err);
+        });
+    }
+}
+//function to run asynchrnously to avoid the max api rate call
+async function attractionPhotos(array, array2){
+    for(j=0; j<10; j++){
+        //grabbing the respective names and putting it into the html
+        var imageName = document.createElement('h3');
+        imageName.innerHTML = array2[j];
+        siteNames.append(imageName);
+
+        await sleep(750)
+        fetch("https://travel-advisor.p.rapidapi.com/photos/list?location_id=" + array[j] + "&currency=USD&limit=2&lang=en_US", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "5c51261411msh7f87afb8f8d99f1p14de4cjsn0abca2259546",
+            "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
+        }
+        })
+        .then(response => response.json())
+        .then((data) => {
+                console.log(data);
+                //creating the h3 and img tags to add to the appropriate sections.
+                var imageTags = document.createElement('img');
+
+                //adding this, so if location_ids dont have corresponding images, we use a stock photo.
+                if (data.data.length !== 0){
+                    imageTags.setAttribute('src', data.data[0].images.small.url);
+                }else{
+                    imageTags.setAttribute('src', 'https://media-cdn.tripadvisor.com/media/photo-l/00/14/61/e5/welcome.jpg'); 
+                }
+                //appending the images and their respective names onto the html page.
                 siteImages.append(imageTags);
         })
         .catch(err => {
