@@ -5,15 +5,15 @@ var searchButton = document.querySelector("#search-btn");
 
 
 //event listener to grab search input city, and put it into local storage. then jump to the second page.
-searchButton.addEventListener('click', function(event){
-        event.preventDefault();
-        city = userInput.value;
-        console.log(city);
-        localStorage.setItem('city', city)
+searchButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    city = userInput.value;
+    console.log(city);
+    localStorage.setItem('city', city)
 
-        location.assign("/Users/steven.chung/Desktop/Main Code/group-project-1/page2.html");
-    })
-  
+    location.assign("page2.html");
+})
+
 //trying to create an autocomplete function.
 $(function() {
     var cityNames = [
@@ -166,7 +166,7 @@ $(function() {
         'Yangon ',
         'Zhengzhou'
     ];
-    userInput.autocomplete({
+    $(".search-input").autocomplete({
         source: cityNames,
     });
 });
