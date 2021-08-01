@@ -1,75 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Inline" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Awesome Group Project</title>
 </head>
 
 <body>
+<<<<<<< HEAD
     <uk-h1>Trip Planner Lite</uk-h1>
     <!-- <h1>Trip Planner Lite</h1> -->
+=======
+    <h1 id="twoheader">Trip Planner Lite</h1>
+>>>>>>> 475bfb95eb51041adfae88409fa06ca9571e67ba
     <!-- weather data pulled from firt page goes here -->
     <div>
         <div class="uk-container uk-container-center">
         <form>
-            <input class="search-input uk-input" id="form-stacked-text"  type="text" placeholder="City...">
-            <button class="submit-button">Submit</button>
+            <input class="search-input uk-input " id="form-stacked-text " type="text " placeholder="City... ">
+            <button class="submit-button ">Submit</button>
         </form>
         </div>
     </div>
     <!-- buttons for hotels, restaurants, tourist sites -->
+<<<<<<< HEAD
     <div class="uk-container uk-container-center">
         <button><a href="#hotel">Hotels</a></button>
         <button><a href="#rest">Restaurants</a></button>
         <button><a href="#sites">Tourist Sites</a></button>
+=======
+    <div id="threebuttons">
+        <button id="hotel"><a href="#hotels"></a></button>
+        <button id="restaurant"><a href="#rest"></a></button>
+        <button id="attractions"><a href="#sites"></a></button>
+>>>>>>> 475bfb95eb51041adfae88409fa06ca9571e67ba
     </div>
     <div class="uk-container uk-container-center">
         <!-- this is where the webcam goes -->
-        <section class="weather-container">
+        <section class="weather-container ">
             <h2>Weather</h2>
             <div class='five-day container uk-grid'>
                 <div class='uk-card'>
-                    <div class="day-0 card-body dates">
-                        <p class="day0dateheader card-title forecast"></p>
-                        <img class="day-0-icon">
-                        <p class="day-0-max card-text"></p>
-                        <p class="day-0-min card-text"></p>
+                    <div class="day-0 card-body dates ">
+                        <p class="day0dateheader card-title forecast "></p>
+                        <img class="day-0-icon ">
+                        <p class="day-0-max card-text "></p>
+                        <p class="day-0-min card-text "></p>
                     </div>
-                </div>    
+                </div>
                 <div class='uk-card'>
                     <div class='day-1 dates'>
-                        <p class="day1dateheader card-title forecast"></p>
-                        <img class="day-1-icon">
-                        <p class="day-1-max"></p>
-                        <p class="day-1-min"></p>
+                        <p class="day1dateheader card-title forecast "></p>
+                        <img class="day-1-icon ">
+                        <p class="day-1-max "></p>
+                        <p class="day-1-min "></p>
                     </div>
                 </div>
                 <div class='uk-card'>
                     <div class='day-2 dates'>
-                        <p class="day2dateheader forecast"></p>
-                        <img class="day-2-icon">
-                        <p class="day-2-max"></p>
-                        <p class="day-2-min"></p>
+                        <p class="day2dateheader forecast "></p>
+                        <img class="day-2-icon ">
+                        <p class="day-2-max "></p>
+                        <p class="day-2-min "></p>
                     </div>
                 </div>
                 <div class='uk-card'>
                     <div class='day-3 dates'>
-                        <p class="day3dateheader forecast"></p>
-                        <img class="day-3-icon">
-                        <p class="day-3-max"></p>
-                        <p class="day-3-min"></p>
+                        <p class="day3dateheader forecast "></p>
+                        <img class="day-3-icon ">
+                        <p class="day-3-max "></p>
+                        <p class="day-3-min "></p>
                     </div>
-                </div>            
+                </div>
                 <div class='uk-card'>
                     <div class='day-4 dates'>
-                        <p class="day4dateheader forecast"></p>
-                        <img class="day-4-icon">
-                        <p class="day-4-max"></p>
-                        <p class="day-4-min"></p>
+                        <p class="day4dateheader forecast "></p>
+                        <img class="day-4-icon ">
+                        <p class="day-4-max "></p>
+                        <p class="day-4-min "></p>
                     </div>
                 </div>
             </div>
@@ -78,28 +92,34 @@
     </div>
     <div class="uk-container uk-container-center">
         <!-- Hotels -->
-        <section id="hotel">
+        <section id="hotels">
             <h2>Hotels</h2>
-            <div class="hotelnames uk-grid remove"></div>
-            <div class="hotelimages uk-grid remove"></div>
+            <div class="hotelnames uk-grid remove "></div>
+            <div class="hotelimages uk-grid remove "></div>
         </section>
         <!-- restaurants -->
         <section id="rest">
             <h2>Restaurants</h2>
-            <div class="restnames uk-grid remove"></div>
-            <div class="restimages uk-grid remove"></div>
-            
-        </section>    
+            <div class="restnames uk-grid remove "></div>
+            <div class="restimages uk-grid remove "></div>
+
+        </section>
         <!-- tourist sites -->
         <section id="sites">
             <h2>Attractions</h2>
-            <div class="sitenames uk-grid remove"></div>
-            <div class="siteimages uk-grid remove"></div>
+            <div class="sitenames uk-grid remove "></div>
+            <div class="siteimages uk-grid remove "></div>
         </section>
     </div>
+<<<<<<< HEAD
     <div class="uk-container uk-container-center">
     <!-- Home button -->
     <button><a href="index.html">Home</a></button>
+=======
+    <div>
+        <!-- Home button -->
+        <button><a href="index.html ">Home</a></button>
+>>>>>>> 475bfb95eb51041adfae88409fa06ca9571e67ba
     </div>
 
 <<<<<<< HEAD
@@ -108,12 +128,19 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
 =======
     <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
     <!-- moment js -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>    
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js "></script>
     <!-- script -->
+<<<<<<< HEAD
 >>>>>>> d1dfbd58a45a583cb012a50a78717096e67eb484
     <script src="script2.js"></script>
+=======
+    <script src="script2.js "></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js "></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js "></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js "></script>
+>>>>>>> 475bfb95eb51041adfae88409fa06ca9571e67ba
 </body>
 
 </html>
