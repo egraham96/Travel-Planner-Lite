@@ -1,3 +1,4 @@
+//Global Variables.
 var openWeatherAPIKey = '96097dc8f5f71e97eb432223ff032ed9';
 var currentWeatherConditions = 'https://api.openweathermap.org/data/2.5/weather?q=';
 var citySearch = document.querySelector('.search-input');
@@ -17,7 +18,8 @@ var siteImages = document.querySelector('.siteimages');
 var latitude ='';
 var longitude ='';
 
-//Function to grab submission and work the APIs
+//Function to grab submission and work the APIs. It starts with the user clicking Submit, and subsequently runs the currentcityweather funciton
+//which then kicks off the other functions based on the latitude and longitude grabbed from the openWeatherAPI.
 function userInput(){
     searchButton.addEventListener('click', function(event){
         event.preventDefault();
@@ -25,13 +27,18 @@ function userInput(){
         console.log(citySearch.value);
         
     currentCityWeather();
-    // travelAdvisor2();
     })
 }    
 
 //function to grab data from oneWeather API and then push the data into the hotel, restaurant and attractions functions.
 function currentCityWeather(){
+    // grabbing the inputted city value to use in the openWeather API
     city = citySearch.value;
+
+    //removing all child elements of class=remove after click of the button to have a fresh empty page.
+    $('.remove').empty();
+
+    //fetching the weather from the openWeather API and the latitude and longitude coordinates.
     var currentWeatherURL = currentWeatherConditions + city + '&appid=' + openWeatherAPIKey + '&units=imperial';
     fetch(currentWeatherURL)
         .then(response => response.json())
@@ -42,18 +49,19 @@ function currentCityWeather(){
             var latLonWeatherURL = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + '&lon=' + longitude + '&exclude=minutely,hourly,alerts&units=imperial&appid=' + openWeatherAPIKey;
             console.log(data);
 
-            //calling the Hotel, attractions, and restaurant functions to get list of respective category for city we are searching for.
+            //calling the Weather, Hotel, attractions, and restaurant functions to get list of respective category for city we are searching for.
+            // setTimeout Functions are so we can bypass the 429 Error.
             Weather(latLonWeatherURL);
-            // attractionsAdvisor(latitude, longitude);
-            setTimeout(function(){
-                hotelAdvisor(latitude, longitude);
-                setTimeout(() => {
-                    attractionsAdvisor(latitude, longitude);
-                    setTimeout(() => {
-                        restaurantsAdvisor(latitude, longitude);
-                    }, 1000);
-                }, 2000);
-            }, 2000);   
+            attractionsAdvisor(latitude, longitude);
+            // setTimeout(function(){
+            //     hotelAdvisor(latitude, longitude);
+            //     setTimeout(() => {
+            //         attractionsAdvisor(latitude, longitude);
+            //         setTimeout(() => {
+            //             restaurantsAdvisor(latitude, longitude);
+            //         }, 1000);
+            //     }, 2000);
+            // }, 2000);   
             // attractionsAdvisor(latitude, longitude);
             // restaurantsAdvisor(latitude, longitude);     
             // restaurantsAdvisor(latitude, longitude);
@@ -106,6 +114,7 @@ function attractionsAdvisor(latitude, longitude){
             var attractionLocationID = [];
             var attractionNameArray = [];
             
+            //adding this to bypass any of the values given that have location_id = 0 as that value breaks the code.
             for (i=0; i< data.data.length; i++){
                 var attractionID = data.data[i].location_id;
                 var attractionName = data.data[i].name;
@@ -177,9 +186,11 @@ async function hotelPhotos(array, array2){
         .then(response => response.json())
         .then((data) => {
                 console.log(data);
+                //creating the h3 and img tags to add to the appropriate sections.
                 var imageName = document.createElement('h3');
                 var imageTags = document.createElement('img');
-                // var locationImg = data.data[0].images.small.url;
+                
+                //adding this, so if location_ids dont have corresponding images, we use a stock photo.
                 if (data.data.length === 0){
                     imageTags.setAttribute('src', 'https://media-cdn.tripadvisor.com/media/photo-l/1d/42/ca/1f/circus-circus-hotel-casino.jpg');
                     imageName.innerHTML = array2[j];
@@ -188,9 +199,7 @@ async function hotelPhotos(array, array2){
                     imageName.innerHTML = array2[j];
                 }
 
-                // imageTags.setAttribute('src', locationImg);
-                // imageName.innerHTML = array2[j];
-
+                //appending the images and their respective names onto the html page.
                 hotelNames.append(imageName);
                 hotelImages.append(imageTags);
         })
@@ -213,10 +222,11 @@ async function restaurantPhotos(array, array2){
         .then(response => response.json())
         .then((data) => {
                 console.log(data);
+                //creating the h3 and img tags to add to the appropriate sections.
                 var imageName = document.createElement('h3');
                 var imageTags = document.createElement('img');
 
-                // var locationImg = data.data[0].images.small.url;
+                //adding this, so if location_ids dont have corresponding images, we use a stock photo.
                 if (data.data.length === 0){
                     imageTags.setAttribute('src', 'https://media-cdn.tripadvisor.com/media/photo-l/02/25/f3/67/relax-by-the-pool.jpg');
                     imageTags.set
@@ -225,6 +235,7 @@ async function restaurantPhotos(array, array2){
                     imageTags.setAttribute('src', data.data[0].images.small.url);
                     imageName.innerHTML = array2[j];
                 }
+                //appending the images and their respective names onto the html page.
                 restNames.append(imageName);
                 restImages.append(imageTags);
 
@@ -248,17 +259,19 @@ async function attractionPhotos(array, array2){
         .then(response => response.json())
         .then((data) => {
                 console.log(data);
+                //creating the h3 and img tags to add to the appropriate sections.
                 var imageName = document.createElement('h3');
                 var imageTags = document.createElement('img');
 
-                // var locationImg = data.data[0].images.small.url;
-                if (data.data.length === 0){
-                    imageTags.setAttribute('src', 'https://media-cdn.tripadvisor.com/media/photo-l/00/14/61/e5/welcome.jpg');
+                //adding this, so if location_ids dont have corresponding images, we use a stock photo.
+                if (data.data.length !== 0){
+                    imageTags.setAttribute('src', data.data[0].images.small.url);
                     imageName.innerHTML = array2[j];
                 }else{
-                    imageTags.setAttribute('src', data.data[0].images.small.url); 
+                    imageTags.setAttribute('src', 'https://media-cdn.tripadvisor.com/media/photo-l/00/14/61/e5/welcome.jpg'); 
                     imageName.innerHTML = array2[j];
                 }
+                //appending the images and their respective names onto the html page.
                 siteNames.append(imageName);
                 siteImages.append(imageTags);
         })
@@ -277,7 +290,7 @@ function Weather(a){
             .then(data => {
                 console.log(data);
         
-            //for loop to create the data for the 5 day forecast
+            //for loop to create the data and produce it on the page for the 5 day forecast
             for(k=0; k<=4; k++){
                 var dayI = document.querySelector('.day-' + k);
                 var dates = document.querySelector('.day' + k + 'dateheader');
