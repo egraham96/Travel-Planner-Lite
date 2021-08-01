@@ -18,6 +18,17 @@ var siteImages = document.querySelector('.siteimages');
 var latitude ='';
 var longitude ='';
 
+
+//function to initialize the page right off the bat and load the page for the city input in the first page from local storage.
+function initialize(){
+    city = localStorage.getItem('city');
+    console.log(city);
+    
+    currentCityWeather(city);
+    userInput();
+}
+
+
 //Function to grab submission and work the APIs. It starts with the user clicking Submit, and subsequently runs the currentcityweather funciton
 //which then kicks off the other functions based on the latitude and longitude grabbed from the openWeatherAPI.
 function userInput(){
@@ -26,14 +37,13 @@ function userInput(){
         city = citySearch.value;
         console.log(citySearch.value);
         
-    currentCityWeather();
+    currentCityWeather(city);
     })
 }    
 
 //function to grab data from oneWeather API and then push the data into the hotel, restaurant and attractions functions.
-function currentCityWeather(){
+function currentCityWeather(city){
     // grabbing the inputted city value to use in the openWeather API
-    city = citySearch.value;
 
     //removing all child elements of class=remove after click of the button to have a fresh empty page.
     $('.remove').empty();
@@ -187,7 +197,7 @@ async function hotelPhotos(array, array2){
         fetch("https://travel-advisor.p.rapidapi.com/photos/list?location_id=" + array[j] + "&currency=USD&limit=2&lang=en_US", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "5c51261411msh7f87afb8f8d99f1p14de4cjsn0abca2259546",
+            "x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
             "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
         }
         })
@@ -225,7 +235,7 @@ async function restaurantPhotos(array, array2){
         fetch("https://travel-advisor.p.rapidapi.com/photos/list?location_id=" + array[j] + "&currency=USD&limit=2&lang=en_US", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "5c51261411msh7f87afb8f8d99f1p14de4cjsn0abca2259546",
+            "x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
             "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
         }
         })
@@ -263,7 +273,7 @@ async function attractionPhotos(array, array2){
         fetch("https://travel-advisor.p.rapidapi.com/photos/list?location_id=" + array[j] + "&currency=USD&limit=2&lang=en_US", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "5c51261411msh7f87afb8f8d99f1p14de4cjsn0abca2259546",
+            "x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
             "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
         }
         })
@@ -326,5 +336,5 @@ function Weather(a){
 
 
 
-
-userInput();
+initialize();
+// userInput();
