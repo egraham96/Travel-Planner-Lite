@@ -18,6 +18,17 @@ var siteImages = document.querySelector('.siteimages');
 var latitude ='';
 var longitude ='';
 
+
+//function to initialize the page right off the bat and load the page for the city input in the first page from local storage.
+function initialize(){
+    city = localStorage.getItem('city');
+    console.log(city);
+    
+    currentCityWeather(city);
+    userInput();
+}
+
+
 //Function to grab submission and work the APIs. It starts with the user clicking Submit, and subsequently runs the currentcityweather funciton
 //which then kicks off the other functions based on the latitude and longitude grabbed from the openWeatherAPI.
 function userInput(){
@@ -26,14 +37,13 @@ function userInput(){
         city = citySearch.value;
         console.log(citySearch.value);
         
-    currentCityWeather();
+    currentCityWeather(city);
     })
 }    
 
 //function to grab data from oneWeather API and then push the data into the hotel, restaurant and attractions functions.
-function currentCityWeather(){
+function currentCityWeather(city){
     // grabbing the inputted city value to use in the openWeather API
-    city = citySearch.value;
 
     //removing all child elements of class=remove after click of the button to have a fresh empty page.
     $('.remove').empty();
@@ -326,5 +336,5 @@ function Weather(a){
 
 
 
-
-userInput();
+initialize();
+// userInput();
