@@ -63,18 +63,19 @@ function currentCityWeather(city) {
             // setTimeout Functions are so we can bypass the 429 Error.
             Weather(latLonWeatherURL);
             hotelAdvisor(latitude, longitude);
-            // setTimeout(function(){
-            //     hotelAdvisor(latitude, longitude);
-            //     setTimeout(() => {
-            //         attractionsAdvisor(latitude, longitude);
-            //         setTimeout(() => {
-            //             restaurantsAdvisor(latitude, longitude);
-            //         }, 1000);
-            //     }, 2000);
-            // }, 2000);   
-            // attractionsAdvisor(latitude, longitude);
-            // restaurantsAdvisor(latitude, longitude);     
-            // restaurantsAdvisor(latitude, longitude);
+
+            setTimeout(function() {
+                hotelAdvisor(latitude, longitude);
+                setTimeout(() => {
+                    attractionsAdvisor(latitude, longitude);
+                    setTimeout(() => {
+                        restaurantsAdvisor(latitude, longitude);
+                    }, 1000);
+                }, 2000);
+            }, 2000);
+            attractionsAdvisor(latitude, longitude);
+            restaurantsAdvisor(latitude, longitude);
+            restaurantsAdvisor(latitude, longitude);
         })
 }
 

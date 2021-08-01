@@ -1,0 +1,82 @@
+                    #main {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                    
+                    #ticket {
+                        border: 5px solid black;
+                        width: 1270px;
+                        height: 525px;
+                    }
+                    
+                    #h1 {
+                        font-family: 'Bungee Inline';
+                        text-align: center;
+                        font-size: 36px;
+                    }
+                    
+                    #twoheader {
+                        font-family: 'Bungee Inline';
+                        text-align: center;
+                        font-size: 36px;
+                    }
+                    
+                    #h2 {
+                        text-align: center;
+                        font-size: 24px;
+                    }
+                    
+                    #h3 {
+                        text-align: center;
+                        font-size: 20px;
+                    }
+                    
+                    #messagebox {
+                        text-align: center;
+                    }
+                    
+                    #threebuttons {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-evenly
+                    }
+                    
+                    #hotel {
+                        font-size: 10px;
+                        background-image: url('images/Hotelbutton.jpg');
+                        background-size: cover;
+                        width: 100px;
+                        height: 100px;
+                        font-size: 2rem;
+                    }
+                    
+                    #hotel a {
+                        font-size: 10px;
+                    }
+                    
+                    #restaurant {
+                        font-size: 10px;
+                        background-image: url('images/Restaurantbutton.jpg');
+                        background-size: cover;
+                        width: 100px;
+                        height: 100px;
+                        font-size: 2rem;
+                    }
+                    
+                    #restaurant a {
+                        font-size: 10px;
+                    }
+                    
+                    #attractions {
+                        font-size: 10px;
+                        background-image: url('images/Attractionsbutton.gif');
+                        background-size: cover;
+                        width: 100px;
+                        height: 100px;
+                        font-size: 2rem;
+                    }
+                    
+                    #attractions a {
+                        font-size: 10px;
+                    }
