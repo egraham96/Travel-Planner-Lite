@@ -26,33 +26,84 @@
     </div>
     <div>
         <!-- this is where the webcam goes -->
-        <section class="webcam-container">
-            <div>
-                <span id="webcam1"></span>
-            </div>
-            <div>
-                <span id="webcam2"></span>
-            </div>
-            <div>
-                <span id="webcam3"></span>
+        <section class="weather-container">
+            <h2>Weather</h2>
+            <div class='five-day container uk-grid'>
+                <div class='uk-card'>
+                    <div class="day-0 card-body dates">
+                        <p class="day0dateheader card-title forecast"></p>
+                        <img class="day-0-icon">
+                        <p class="day-0-max card-text"></p>
+                        <p class="day-0-min card-text"></p>
+                    </div>
+                </div>    
+                <div class='uk-card'>
+                    <div class='day-1 dates'>
+                        <p class="day1dateheader card-title forecast"></p>
+                        <img class="day-1-icon">
+                        <p class="day-1-max"></p>
+                        <p class="day-1-min"></p>
+                    </div>
+                </div>
+                <div class='uk-card'>
+                    <div class='day-2 dates'>
+                        <p class="day2dateheader forecast"></p>
+                        <img class="day-2-icon">
+                        <p class="day-2-max"></p>
+                        <p class="day-2-min"></p>
+                    </div>
+                </div>
+                <div class='uk-card'>
+                    <div class='day-3 dates'>
+                        <p class="day3dateheader forecast"></p>
+                        <img class="day-3-icon">
+                        <p class="day-3-max"></p>
+                        <p class="day-3-min"></p>
+                    </div>
+                </div>            
+                <div class='uk-card'>
+                    <div class='day-4 dates'>
+                        <p class="day4dateheader forecast"></p>
+                        <img class="day-4-icon">
+                        <p class="day-4-max"></p>
+                        <p class="day-4-min"></p>
+                    </div>
+                </div>
             </div>
         </section>
         <section></section>
     </div>
     <div>
         <!-- Hotels -->
-        <section id="hotel"></section>
+        <section id="hotel">
+            <h2>Hotels</h2>
+            <div class="hotelnames uk-grid"></div>
+            <div class="hotelimages uk-grid"></div>
+        </section>
         <!-- restaurants -->
-        <section id="rest"></section>
+        <section id="rest">
+            <h2>Restaurants</h2>
+            <div class="restnames uk-grid"></div>
+            <div class="restimages uk-grid"></div>
+            
+        </section>    
         <!-- tourist sites -->
-        <section id="sites"></section>
+        <section id="sites">
+            <h2>Attractions</h2>
+            <div class="sitenames uk-grid"></div>
+            <div class="siteimages uk-grid"></div>
+        </section>
     </div>
     <div>
     <!-- Home button -->
     <button><a href="index.html">Home</a></button>
     </div>
 
-
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- moment js -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>    
+    <!-- script -->
     <script src="script2.js"></script>
 </body>
 
