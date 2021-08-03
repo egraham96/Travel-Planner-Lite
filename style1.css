@@ -1,5 +1,5 @@
 /* Uikit framework, own customization on default styling, made adjustments to color within html */
-/* CSS for page2.html */
+/* CSS for index.html */
 html {
     font: normal 14px / 20px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
     -webkit-text-size-adjust: 100%;
@@ -14,12 +14,12 @@ html {
     background: transparent;
   }
   a:active,
-  a:hover {
+  a:hover {cd
     outline: 0;
   }
   a,
   .uk-link {
-    color: #0077dd;
+    color: #5075a4;
     text-decoration: none;
     cursor: pointer;
   }
@@ -8088,42 +8088,24 @@ html {
     border-top-color: transparent;
     border-bottom-color: transparent;
     border-right-color: #333333;
-  }                   
-
+  }     
+  
   /* Own modifications of style within index.html */
-
                     #main {
                         width: 100%;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                     }
-
-                    main {
-                        width: 96%;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                    }
-
-                    form {
-                        background-color: #f9f9f9;
-                        width: 5px;
-                        border-radius: 5px;
-                        border: 2px solid #5075a4;
-                       
-                    }
-
-                    #nav {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                    }
-
+                    
                     #ticket {
-                        border: 5px solid black;
-                        width: 1270px;
-                        height: 525px;
+                        border: 5px solid #5075a4;
+                        width: 1000px;
+                        height: 500px;
+                    }
+                    #ticket:hover {
+                        box-shadow: 0 4px 8px 0 rgba(80,117,164), 0 6px 20px 0 rgba(7,16,9, 0.19);
+                        
                     }
                     
                     #h1 {
@@ -8137,23 +8119,49 @@ html {
                     #twoheader {
                         font-family: 'Bungee Inline';
                         text-align: center;
-                        font-size: 36px;
-                        color: #5075a4 ;
-                        text-shadow: 4px 4px 8px #f9f9f9;
+                        font-size: 4px;
+                    }
+
+                    .display-description {
+                        display: flex;
+                        justify-content: center;
+                        text-align: center;
                     }
                     
-                    h2 {
+                    #h2 {
                         text-align: center;
-                        font-size: 24px;
-                        color: #071009;
-                        text-shadow: 4px 4px 8px #f9f9f9;
+                        font-size: 20px;
+                        color: #5075a4;
                     }
                     
                     #h3 {
                         text-align: center;
-                        font-size: 20px;
+                        font-size: 10px;
+                        color: #071009;
                     }
+
+                    form {
+                        background-color: #87ceeb;
+                        width: 5px;
+                        border-radius: 5px;
+                        border: 2px solid #5075a4;
+                        justify-content: center;
+                    }
+
                     
+                    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: #f9f9f9;
+                        opacity: 1; /* Firefox */
+                      }
+                      
+                      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                        color: #f9f9f9;
+                      }
+                      
+                      ::-ms-input-placeholder { /* Microsoft Edge */
+                        color: #f9f9f9;
+                      }
+                   
                     #messagebox {
                         text-align: center;
                     }
@@ -8161,37 +8169,9 @@ html {
                     #threebuttons {
                         display: flex;
                         flex-direction: row;
-                        justify-content: space-evenly;
+                        justify-content: space-evenly
                     }
-
-                    button:hover {
-                        cursor: pointer;
-                    }
-
-                    #container-bot {
-                        display: flex;
-                        justify-content: center;
-                        text-align: center;
-                    }
-
-                    #hotels-div {
-                        display: flex;
-                        justify-content: center;
-                        text-align: center;
-                    }
-
-                    #rest-div {
-                        display: flex;
-                        justify-content: center;
-                        text-align: center;
-                    }
-
-                    #sites-div {
-                        display: flex;
-                        justify-content: center;
-                        text-align: center;
-                    }
-
+                    
                     #hotel {
                         font-size: 10px;
                         background-image: url('images/Hotelbutton.jpg');
@@ -8199,8 +8179,6 @@ html {
                         width: 100px;
                         height: 100px;
                         font-size: 2rem;
-                        border: none;
-                        border-radius: 25px;
                     }
                     
                     #hotel a {
@@ -8214,8 +8192,6 @@ html {
                         width: 100px;
                         height: 100px;
                         font-size: 2rem;
-                        border: none;
-                        border-radius: 25px;
                     }
                     
                     #restaurant a {
@@ -8229,16 +8205,8 @@ html {
                         width: 100px;
                         height: 100px;
                         font-size: 2rem;
-                        border: none;
-                        border-radius: 25px;
                     }
                     
                     #attractions a {
                         font-size: 10px;
-                    }
-
-                    #home-btn {
-                        display: flex;
-                        justify-content: center;
-                        text-align: center;
                     }
