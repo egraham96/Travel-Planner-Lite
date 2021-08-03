@@ -1,39 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Links, Style Links -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Inline" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="style1.css" />
+    <script src="https://kit.fontawesome.com/d5e3f9b5d5.js" crossorigin="anonymous"></script>
+    <title>Weather Dashboard</title>
+</head>
+
+<body id="main">
+<main>
+    <div  class="uk-padding uk-margin" >
+        <h1 id="h1" class="display-4">Trip Planner Lite</h1>
+        <hr class="my-4">
+        <div class="display-description">
+        <h2 id="h2" class="lead uk-text-italic uk-text-${2|truncate,break,nowrap|}  uk-text-${1SSSSS|muted,emphasis,primary,secondary,success,warning,danger|}" >Search for any city in the world and retrieve realtime information about weather, local attractions & accomodations!</h2>
+        </div>
+    </div>
+
+    <div class="uk-container uk-flex uk-flex-center uk-flex-middle uk-padding">
+        <div id="ticket" class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-background-image@${0|s,m,l,xl|}" data-src="images/Flightticket.jpeg" uk-img>
+            <form class="uk-form-stacked uk-container  uk-flex uk-flex-center uk-flex-middle uk-search uk-search-navbar">
+                        <input class="search-input uk-search uk-search-input uk-search-large" id="form-stacked-text" type="search" placeholder="                Your city awaits...">
+                        <button id="search-btn" class=" uk-button uk-button-primary uk-flex-center uk-flex-middle"><i class="fas fa-plane-departure"></i></button>
+                        
+            </form>
+        </div>
+    </div>
+
+    <h3 id="h3" class="lead">Created by Elliott, Emma, My and Steven</h3>
+
+    <div id="messagebox "></div>
+</main>
+
+    <!-- Script -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js "></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js "></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js "></script>
+    <script src="script.js "></script>
+</body>
+
+</html>
+
+
+
+
+
+
+<!--  <!DOCTYPE html>
+<html lang="en ">
+<head>
+    <meta charset="UTF-8 " />
+    <meta name="viewport " content="width=device-width, initial-scale=1.0 " />
+    <meta http-equiv="X-UA-Compatible " content="ie=edge " />
+    <link rel="stylesheet " href="style.css " />
+    <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css " />
     <title>Weather Dashboard</title>
 </head>
 
 <body>
-    <div class="uk-inline uk-margin">
+    <div class="uk-inline uk-margin ">
         <h1>Trip Planner Lite</h1>
     </div>    
     <div >
-        <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="image\photo-1564241808878-2ae9104d10e5.jpg" width="1800" height="1200" uk-img>
+        <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light " data-src="image\photo-1564241808878-2ae9104d10e5.jpg " width="1800 " height="1200 " uk-img>
             
-            <form class="uk-form-stacked">
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Search for a City</label>
-                    <div class="uk-form-controls">
-                        <input class="search-input uk-input" id="form-stacked-text"  type="text" placeholder="City...">
+            <form class="uk-form-stacked ">
+                <div class="uk-margin ">
+                    <label class="uk-form-label " for="form-stacked-text ">Search for a City</label>
+                    <div class="uk-form-controls ">
+                        <input class="search-input uk-input " id="form-stacked-text "  type="text " placeholder="City... ">
                     </div>
                 </div>
             </form>
-            <button id="search-btn" class=" uk-button uk-button-secondary"><a href="page2.html">Go</a></button>
+            <button id="search-btn " class=" uk-button uk-button-secondary ">Go</button>
            
         </div>
         
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
-    <script src="script.js"></script>
+     jquery
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js "></script>
+    <script src="script.js "></script>
 </body>
 
-</html> 
+</html>  
+-->

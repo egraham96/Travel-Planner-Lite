@@ -1,59 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Inline" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
-    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/d5e3f9b5d5.js" crossorigin="anonymous"></script>
+    <title>Awesome Group Project</title>
 </head>
 
-<body>
-    <h1>Trip Planner Lite</h1>
-    <!-- weather data pulled from firt page goes here -->
-    <div>
-        <form>
-            <input class="search-input uk-input" id="form-stacked-text"  type="text" placeholder="City...">
-            <button class="submit-button">Submit</button>
-        </form>
+<body id="main">
+<main>
+    <!-- city data pulled from first page loads below -->
+    <div id="container-top" class="uk-container uk-container-center uk-padding uk-margin">
+        <h1 id="twoheader" class="uk-padding uk-margin">Trip Planner Lite</h1>
+        <div id="nav" class="uk-container uk-container-center">
+            <div class="uk-container uk-container-center uk-padding uk-margin">
+            <form class="uk-form-stacked uk-container uk-search uk-search-navbar">
+                <input class="search-input uk-search uk-search-input uk-search-large" id="form-stacked-text" type="search" placeholder="                Search for new city...">
+                <button id="search-btn" class=" uk-button uk-button-primary uk-flex-center uk-flex-middle"><i class="fas fa-plane-departure"></i></button> 
+            </form>
+            </div>
+            <div id="threebuttons">
+                <button id="hotel"><a href="#hotels-div" alt="hotels"></a></button>
+                <button id="restaurant"><a href="#rest-div" alt="restaurants"></a></button>
+                <button id="attractions"><a href="#sites-div" alt="attractions"></a></button>
+            </div>
+        </div>
     </div>
     <!-- buttons for hotels, restaurants, tourist sites -->
-    <div>
-        <button><a href="#hotel">Hotels</a></button>
-        <button><a href="#rest">Restaurants</a></button>
-        <button><a href="#sites">Tourist Sites</a></button>
-    </div>
-    <div>
-        <!-- this is where the webcam goes -->
-        <section class="webcam-container">
-            <div>
-                <span id="webcam1"></span>
-            </div>
-            <div>
-                <span id="webcam2"></span>
-            </div>
-            <div>
-                <span id="webcam3"></span>
+   
+    <div id="container-mid" class="uk-container uk-container-center uk-flex uk-flex-center uk-flex-middle uk-padding uk-margin">
+        <!-- this is where the weather data goes -->
+        <section class="weather-container ">
+            <h2 id="h2">Weather</h2>
+            <div class='five-day container uk-grid'>
+                <div class='uk-card'>
+                    <div class="day-0 card-body dates ">
+                        <p class="day0dateheader card-title forecast "></p>
+                        <img class="day-0-icon ">
+                        <p class="day-0-max card-text "></p>
+                        <p class="day-0-min card-text "></p>
+                    </div>
+                </div>
+                <div class='uk-card'>
+                    <div class='day-1 dates'>
+                        <p class="day1dateheader card-title forecast "></p>
+                        <img class="day-1-icon ">
+                        <p class="day-1-max "></p>
+                        <p class="day-1-min "></p>
+                    </div>
+                </div>
+                <div class='uk-card'>
+                    <div class='day-2 dates'>
+                        <p class="day2dateheader forecast "></p>
+                        <img class="day-2-icon ">
+                        <p class="day-2-max "></p>
+                        <p class="day-2-min "></p>
+                    </div>
+                </div>
+                <div class='uk-card'>
+                    <div class='day-3 dates'>
+                        <p class="day3dateheader forecast "></p>
+                        <img class="day-3-icon ">
+                        <p class="day-3-max "></p>
+                        <p class="day-3-min "></p>
+                    </div>
+                </div>
+                <div class='uk-card'>
+                    <div class='day-4 dates'>
+                        <p class="day4dateheader forecast "></p>
+                        <img class="day-4-icon ">
+                        <p class="day-4-max "></p>
+                        <p class="day-4-min "></p>
+                    </div>
+                </div>
             </div>
         </section>
-        <section></section>
     </div>
-    <div>
+    <div id="hotels-div" class="uk-container uk-container-center uk-flex uk-flex-center uk-flex-middle uk-padding k-margin">
         <!-- Hotels -->
-        <section id="hotel"></section>
-        <!-- restaurants -->
-        <section id="rest"></section>
-        <!-- tourist sites -->
-        <section id="sites"></section>
-    </div>
-    <div>
-    <!-- Home button -->
-    <button><a href="index.html">Home</a></button>
+            <section id="hotels">
+            <h2>Hotels</h2>
+            <div class="hotelnames uk-grid remove "></div>
+            <div class="hotelimages uk-grid remove "></div>
+            </section>
     </div>
 
+    <div id="rest-div" class="uk-container uk-container-center uk-flex uk-flex-center uk-flex-middle uk-padding k-margin">
+        <!-- restaurants -->
+        <section id="rest">
+            <h2>Restaurants</h2>
+            <div class="restnames uk-grid remove "></div>
+            <div class="restimages uk-grid remove "></div>
+        </section>
+    </div>
+    
+    <div id="sites-div" class="uk-container uk-container-center uk-flex uk-flex-center uk-flex-middle uk-padding k-margin">
+        <!-- tourist sites -->
+        <section id="sites">
+            <h2>Attractions</h2>
+            <div class="sitenames uk-grid remove "></div>
+            <div class="siteimages uk-grid remove "></div>
+        </section>
+    </div>
+    <!-- Home button -->
+    <div id="home-btn">
+        <button class="uk-button uk-button-primary uk-flex-center uk-flex-middle"><a href="index.html "><i class="fas fa-home"></i></a></button>
+    </div>
+
+</main>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <!-- moment js -->
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js "></script>
+    <!-- script -->
 
     <script src="script2.js"></script>
+    <script src="script2.js "></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js "></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js "></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js "></script>
+
 </body>
 
 </html>
