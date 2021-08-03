@@ -2,9 +2,9 @@
 var openWeatherAPIKey = '96097dc8f5f71e97eb432223ff032ed9';
 var currentWeatherConditions = 'https://api.openweathermap.org/data/2.5/weather?q=';
 var citySearch = document.querySelector('.search-input');
-var searchButton = document.querySelector('.submit-button');
+var searchButton = document.querySelector('#search-btn');
 
-var hotelSection = document.querySelector('#hotel');
+var hotelSection = document.querySelector('#hotels');
 var restaurantSection = document.querySelector('#rest');
 var attractionSection = document.querySelector('#sites');
 
@@ -62,7 +62,6 @@ function currentCityWeather(city) {
             //calling the Weather, Hotel, attractions, and restaurant functions to get list of respective category for city we are searching for.
             // setTimeout Functions are so we can bypass the 429 Error.
             Weather(latLonWeatherURL);
-            hotelAdvisor(latitude, longitude);
 
             setTimeout(function() {
                 hotelAdvisor(latitude, longitude);
@@ -73,9 +72,6 @@ function currentCityWeather(city) {
                     }, 1000);
                 }, 2000);
             }, 2000);
-            attractionsAdvisor(latitude, longitude);
-            restaurantsAdvisor(latitude, longitude);
-            restaurantsAdvisor(latitude, longitude);
         })
 }
 
@@ -85,7 +81,7 @@ function hotelAdvisor(latitude, longitude) {
     fetch("https://travel-advisor.p.rapidapi.com/hotels/list-by-latlng?latitude=" + latitude + "&longitude=" + longitude + "&lang=en_US&hotel_class=3&limit=25&adults=2&amenities=bar_lounge&rooms=1&currency=USD&subcategory=hotel%2Cbb&nights=5", {
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
+                "x-rapidapi-key": "b519689459msheabfb47c1ca1bb2p18f9bcjsne0e023037538",
                 "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
             }
         })
@@ -116,7 +112,7 @@ function attractionsAdvisor(latitude, longitude) {
     fetch("https://travel-advisor.p.rapidapi.com/attractions/list-by-latlng?longitude=" + longitude + " &latitude=" + latitude + " &lunit=mi&currency=USD&limit=25&lang=en_US", {
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
+                "x-rapidapi-key": "b519689459msheabfb47c1ca1bb2p18f9bcjsne0e023037538",
                 "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
             }
         })
@@ -153,7 +149,7 @@ function restaurantsAdvisor(latitude, longitude) {
     fetch("https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng?latitude=" + latitude + "&longitude=" + longitude + "&limit=25&currency=USD&distance=2&open_now=false&lunit=km&lang=en_US&min_rating=4", {
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
+                "x-rapidapi-key": "b519689459msheabfb47c1ca1bb2p18f9bcjsne0e023037538",
                 "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
             }
         })
@@ -198,7 +194,7 @@ async function hotelPhotos(array, array2) {
         fetch("https://travel-advisor.p.rapidapi.com/photos/list?location_id=" + array[j] + "&currency=USD&limit=2&lang=en_US", {
                 "method": "GET",
                 "headers": {
-                    "x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
+                    "x-rapidapi-key": "b519689459msheabfb47c1ca1bb2p18f9bcjsne0e023037538",
                     "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
                 }
             })
@@ -236,7 +232,7 @@ async function restaurantPhotos(array, array2) {
         fetch("https://travel-advisor.p.rapidapi.com/photos/list?location_id=" + array[j] + "&currency=USD&limit=2&lang=en_US", {
                 "method": "GET",
                 "headers": {
-                    "x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
+                    "x-rapidapi-key": "b519689459msheabfb47c1ca1bb2p18f9bcjsne0e023037538",
                     "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
                 }
             })
@@ -274,7 +270,7 @@ async function attractionPhotos(array, array2) {
         fetch("https://travel-advisor.p.rapidapi.com/photos/list?location_id=" + array[j] + "&currency=USD&limit=2&lang=en_US", {
                 "method": "GET",
                 "headers": {
-                    "x-rapidapi-key": "c2d01f7a23mshe54d6f4990a381ap15b441jsn5e98ec57b7b7",
+                    "x-rapidapi-key": "b519689459msheabfb47c1ca1bb2p18f9bcjsne0e023037538",
                     "x-rapidapi-host": "travel-advisor.p.rapidapi.com"
                 }
             })
