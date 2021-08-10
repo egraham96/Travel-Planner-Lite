@@ -6,7 +6,14 @@ For our first group project of the course, we were required to conceive of and e
 
 ## Built With
 
+* [UlKit](https://getuikit.com/docs/introduction)
+* [Google Fonts](https://developers.google.com/fonts/)
+* [jQuery](https://jquery.com/)
+* [jQuery UI](https://jqueryui.com/)
 * [Moment JS](https://momentjs.com/)
+* [Travel Advisor API](https://rapidapi.com/apidojo/api/travel-advisor)
+* [OpenWeather Map API](https://openweathermap.org/api)
+
 
 ## Deployed Link
 
@@ -54,3 +61,31 @@ function hotelAdvisor(latitude, longitude) {
         });
 }
 ```
+
+## Contact the Collaborators:
+Emma Graham: https://github.com/egraham96
+Steven Chung: https://github.com/skchung93
+My Ly: https://github.com/myly-2306
+Elliott Spencer: https://github.com/spencee1315
+
+
+## License
+Copyright (c) <2021> <Steven Chung, Emma Graham, My Ly, Elliott Spencer>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
