@@ -63,10 +63,10 @@ function hotelAdvisor(latitude, longitude) {
 ```
 
 ## Contact the Collaborators:
-Emma Graham: https://github.com/egraham96
-Steven Chung: https://github.com/skchung93
-My Ly: https://github.com/myly-2306
-Elliott Spencer: https://github.com/spencee1315
+* Emma Graham: https://github.com/egraham96
+* Steven Chung: https://github.com/skchung93
+* My Ly: https://github.com/myly-2306
+* Elliott Spencer: https://github.com/spencee1315
 
 
 ## License
