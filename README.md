@@ -1,11 +1,10 @@
 # Group Project 1 - Trip Planner Lite
 By Steven Chung, Elliott Spencer, My Ly, Emma Graham
 
-## Your Task
+## Your Task:
 For our first group project of the course, we were required to conceive of and execute a design that solves a real-world problem by integrating data received from multiple server-side API requests. Our group decided to create a Trip Planner application that would allow users to input the name of their destination (any city in the world!). After submitting a city, users will be presented with the weather at their destination over the next 5 days. They will also be able to see popular hotels, restaurants and attractions near their destination. This application will help users plan upcoming trips. The weather, hotels, restaurants and attractions info are provided by two APIS: Rapid API Weather API & Rapid API Travel Advisor API.
 
-## Built With
-
+## Built With:
 * [UlKit](https://getuikit.com/docs/introduction)
 * [Google Fonts](https://developers.google.com/fonts/)
 * [jQuery](https://jquery.com/)
@@ -15,17 +14,15 @@ For our first group project of the course, we were required to conceive of and e
 * [OpenWeather Map API](https://openweathermap.org/api)
 
 
-## Deployed Link
-
+## Deployed Links:
 * [See Live Site](https://egraham96.github.io/group-project-1/)
 * [Link to GitHub Repo](https://github.com/egraham96/group-project-1)
 
-## Preview of Working Site
-
+## Preview of Working Site:
 ![Screenshot of Deployed Application](images/page1.png)
 ![Screenshot of Deployed Application](images/page2_top.png)
 
-## Code Snippet
+## Code Snippet:
 This a code snippet using jquery...........
 
 ```javascript
@@ -69,7 +66,7 @@ function hotelAdvisor(latitude, longitude) {
 * Elliott Spencer: https://github.com/spencee1315
 
 
-## License
+## License:
 Copyright (c) <2021> <Steven Chung, Emma Graham, My Ly, Elliott Spencer>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
