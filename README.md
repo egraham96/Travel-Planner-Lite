@@ -15,8 +15,8 @@ For our first group project of the course, we were required to conceive of and e
 
 
 ## Deployed Links:
-* [See Live Site](https://egraham96.github.io/group-project-1/)
-* [Link to GitHub Repo](https://github.com/egraham96/group-project-1)
+* [See Live Site](https://egraham96.github.io/Travel-Planner-Lite/)
+* [Link to GitHub Repo](https://github.com/egraham96/Travel-Planner-Lite)
 
 ## Preview of Working Site:
 ![Screenshot of Deployed Application](images/page1.png)
